@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy 25th, Milcah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,400;1,500&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{--royal:#2347B8;--deep:#14308A;--navy:#0B1B4D;--sky:#7FA2FF;--pale:#DCE3F5;--ivory:#F8F6EF;--gold:#FFD98A;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',system-ui,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--ivory);color:var(--navy);font-family:var(--serif);overflow-x:hidden}
+body.lock{overflow:hidden;height:100vh}p{margin:0}
+.tile{position:relative;overflow:hidden;background:var(--deep)}
+.tile i{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.14);transition:opacity 1.4s ease,transform 8s linear}
+.tile i.on{opacity:1;transform:scale(1)}
+.noph .tile:after{content:"your photo";position:absolute;left:0;right:0;bottom:10px;text-align:center;font:italic 300 13px var(--serif);color:var(--pale);opacity:.75}
+/* gate */
+#gate{position:fixed;inset:0;z-index:50;background:radial-gradient(90% 60% at 50% 40%,#2347B8,#0B1B4D);color:var(--ivory);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;text-align:center;padding:24px;transition:transform 1.3s cubic-bezier(.77,0,.18,1)}
+#gate.open{transform:translateY(-101%)}
+#gate small{font:300 13px var(--sans);letter-spacing:.3em;opacity:.8}
+#gate h1{font:italic 300 clamp(34px,10vw,56px)/1.05 var(--serif);margin:0}
+#seal{width:120px;height:120px;border-radius:50%;border:0;cursor:pointer;background:radial-gradient(circle at 35% 30%,#8FB0FF,var(--royal) 60%,var(--navy));color:var(--ivory);font:italic 500 58px var(--serif);box-shadow:0 14px 50px #0009,inset 0 0 0 5px #ffffff22;animation:pulse 2.4s ease-in-out infinite}
+#seal.crack{animation:crack .9s forwards}
+@keyframes pulse{50%{transform:scale(1.08);box-shadow:0 14px 70px #7FA2FF88,inset 0 0 0 5px #ffffff22}}
+@keyframes crack{30%{transform:rotate(-14deg) scale(1.2)}100%{transform:rotate(30deg) scale(0);opacity:0}}
+/* hero */
+.hero{position:relative;min-height:100svh;background:radial-gradient(120% 60% at 50% 20%,#7FA2FF66,transparent 70%),linear-gradient(180deg,#1E3FA8,#3D66E0 55%,var(--navy));color:var(--ivory);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:70px 24px 56px;overflow:hidden;text-align:center}
+.big{position:absolute;top:5%;left:50%;font:italic 300 min(70vw,360px)/1 var(--serif);color:transparent;-webkit-text-stroke:1px #F8F6EF55;white-space:nowrap;opacity:0;transform:translateX(-50%) scale(.7);transition:opacity 2s .6s,transform 2.6s .6s cubic-bezier(.2,.8,.2,1)}
+.go .big{opacity:1;transform:translateX(-50%) scale(1)}
+.arch{position:relative;width:min(68vw,320px);aspect-ratio:3/4;border-radius:999px 999px 14px 14px;border:1px solid #F8F6EF88;padding:8px;z-index:2;opacity:0;transform:translateY(60px);transition:all 1.6s .9s cubic-bezier(.2,.8,.2,1)}
+.go .arch{opacity:1;transform:none}.arch .tile{width:100%;height:100%;border-radius:999px 999px 8px 8px}
+.orb{position:absolute;width:26vw;max-width:120px;aspect-ratio:1;border-radius:50%;z-index:3;border:3px solid var(--ivory);animation:fl 7s ease-in-out infinite}
+.orb.a{left:5%;top:44%}.orb.b{right:4%;top:26%;animation-delay:-3s;width:21vw}
+@keyframes fl{50%{transform:translateY(-16px) rotate(4deg)}}
+.hero h2{margin:30px 0 8px;font:300 clamp(40px,12.5vw,76px)/.98 var(--serif);z-index:2}
+.hero h2 span{display:block;overflow:hidden}.hero h2 em{display:block;font-style:italic;font-weight:400;transform:translateY(110%);transition:transform 1.3s cubic-bezier(.2,.8,.2,1)}
+.go .hero h2 em{transform:none}.go .hero h2 span:nth-child(2) em{transition-delay:.25s}
+.hero p{font:300 14px/1.7 var(--sans);letter-spacing:.06em;color:var(--pale);z-index:2;opacity:0;transition:opacity 1.5s 1.8s}.go .hero p{opacity:1}
+.mq{background:var(--navy);padding:14px 0;overflow:hidden;display:grid;gap:10px}
+.row{display:flex;gap:10px;width:max-content;animation:mq 46s linear infinite}.row.rev{animation-direction:reverse;animation-duration:58s}
+.row .tile{width:140px;height:190px;border-radius:6px;flex:none}.row.rev .tile{width:170px;height:130px}
+@keyframes mq{to{transform:translateX(calc(-50% - 5px))}}
+/* letter */
+.letter{max-width:580px;margin:0 auto;padding:110px 28px 50px}
+.letter h2{font:italic 300 clamp(40px,11.5vw,64px)/1.02 var(--serif);margin:0 0 14px;color:var(--deep)}
+.sub{font:400 13px var(--sans);letter-spacing:.22em;color:var(--royal);margin-bottom:56px}
+.letter>p,.close p{font-size:clamp(20px,5.3vw,24px);line-height:1.62;margin-bottom:26px}
+.drop:first-letter{float:left;font:italic 400 5.6em/.78 var(--serif);padding:8px 12px 0 0;color:var(--royal)}
+.grp{--fg:var(--navy);--ac:var(--royal);padding:40px 0 60px;color:var(--fg);background:var(--ivory)}
+.grp.dk{--fg:var(--ivory);--ac:#9DB8FF;background:linear-gradient(180deg,#1E3FA8,var(--navy))}
+.it{position:relative;max-width:560px;margin:0 auto;padding:60px 28px 14px}
+.it:after{content:"";display:block;clear:both}
+.num{font:italic 400 clamp(110px,34vw,170px)/.8 var(--serif);color:color-mix(in srgb,var(--ac) 16%,transparent);-webkit-text-stroke:1.5px var(--ac);transform:translateY(40px) scale(.9);opacity:0;transition:all 1.4s cubic-bezier(.2,.8,.2,1)}
+.it.even .num{text-align:right}.it.in .num{transform:none;opacity:.85}
+.it h3{margin:14px 0 16px;font:italic 500 clamp(28px,7.6vw,38px)/1.12 var(--serif)}
+.w span{display:inline-block;opacity:0;transform:translateY(.6em);filter:blur(6px);transition:all 1s cubic-bezier(.2,.8,.2,1)}
+.in .w span{opacity:1;transform:none;filter:none}
+.tx{border-left:2px solid var(--ac);padding-left:16px}.tx:empty{display:none}
+.tx p{font-size:clamp(19px,5vw,22px);line-height:1.6;margin-bottom:14px}
+.r{opacity:0;transform:translateY(28px);transition:opacity 1.2s,transform 1.2s cubic-bezier(.2,.8,.2,1)}.r.in,.in .r{opacity:1;transform:none}
+/* popping polaroids */
+.pop{float:right;width:40vw;max-width:210px;aspect-ratio:3/4;margin:-6px 0 14px 18px;border:6px solid var(--ivory);border-radius:4px;box-shadow:0 18px 40px #0b1b4d66;rotate:5deg;opacity:0;z-index:2}
+.it.even .pop{float:left;margin:-6px 18px 14px 0;rotate:-5deg}
+.pop.p1{aspect-ratio:1;rotate:-4deg}.it.even .pop.p1{rotate:4deg}
+.pop.p2{aspect-ratio:4/5;border-radius:999px 999px 4px 4px;rotate:7deg}.it.even .pop.p2{rotate:-7deg}
+.pop.in{animation:pop 1.1s cubic-bezier(.34,1.56,.64,1) forwards}
+@keyframes pop{0%{opacity:0;transform:scale(.15) rotate(-30deg)}60%{opacity:1}100%{opacity:1;transform:none}}
+.brk{margin:70px auto 20px;display:flex;justify-content:center;gap:12px;padding:0 20px}
+.ph{width:100%;max-width:520px;clip-path:inset(100% 0 0 0);transition:clip-path 1.6s cubic-bezier(.77,0,.18,1),opacity 1.2s;opacity:0;border-radius:4px}.ph.in{clip-path:inset(0);opacity:1}
+.ph.arch{height:min(120vw,560px);width:min(78vw,380px);border-radius:999px 999px 8px 8px}
+.ph.wide{height:min(66vw,320px);max-width:640px}
+.ph.circ{width:min(80vw,380px);height:min(80vw,380px);border-radius:50%}
+.duo .ph{width:50%;height:min(86vw,400px)}.duo .ph.d{margin-top:50px;transition-delay:.3s;border-radius:6px 6px 999px 999px}.duo .ph:first-child{border-radius:999px 999px 6px 6px}
+/* video */
+.vid{background:radial-gradient(80% 50% at 50% 30%,#2347B8,var(--navy));color:var(--ivory);text-align:center;padding:90px 24px 100px}
+.vid h2{font:italic 300 clamp(34px,9.5vw,56px)/1.05 var(--serif);margin:0 0 40px}
+.phone{position:relative;width:min(70vw,300px);aspect-ratio:9/16;margin:0 auto;border-radius:34px;border:7px solid #F8F6EF;box-shadow:0 30px 80px #0009,0 0 0 1px #ffffff44,0 0 90px #7FA2FF55;overflow:hidden;background:var(--navy)}
+.phone video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:italic 300 22px/1.3 var(--serif);color:var(--pale)}.phone.has .vph{display:none}
+/* finale */
+.finale{background:radial-gradient(90% 50% at 50% 0,#1E3FA8,var(--navy) 70%);color:var(--ivory);padding:100px 28px 130px;text-align:center;position:relative;overflow:hidden}
+.close{max-width:560px;margin:0 auto 40px;text-align:left}.close p{color:#F8F6EFee}
+.quote{font:italic 300 clamp(26px,7.4vw,38px)/1.28 var(--serif);max-width:560px;margin:60px auto 36px;color:var(--pale)}
+.sig{font:italic 400 clamp(36px,10vw,52px) var(--serif)}.with{font:300 13px var(--sans);letter-spacing:.24em;color:var(--sky);margin-bottom:6px}
+.cake{margin:80px auto 0;width:120px;cursor:pointer;background:none;border:0;color:inherit;display:block}
+.cake svg{width:100%;overflow:visible}.fl{transform-origin:60px 30px;animation:flick .22s infinite alternate}
+@keyframes flick{to{transform:scale(1.08,.9) rotate(3deg)}}
+.cake.out .fl{display:none}.cake .smoke{opacity:0}.cake.out .smoke{animation:sm 2.4s forwards}
+@keyframes sm{from{opacity:.8;transform:translateY(0)}to{opacity:0;transform:translateY(-60px)}}
+.cake span{display:block;margin-top:14px;font:300 13px var(--sans);letter-spacing:.2em;color:var(--sky)}
+#wish{max-width:420px;margin:26px auto 0;font:italic 300 clamp(24px,6.6vw,32px)/1.3 var(--serif);opacity:0;transition:opacity 2s}.out~#wish{opacity:1}
+/* hud */
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--sky);z-index:20}
+#cnt{position:fixed;left:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:20;background:var(--navy);color:var(--ivory);font:italic 400 17px var(--serif);padding:6px 14px;border-radius:999px;opacity:0;transform:translateY(20px);transition:.5s}#cnt.show{opacity:.95;transform:none}
+#snd{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:20;width:44px;height:44px;border-radius:50%;border:0;background:var(--royal);display:none;align-items:center;justify-content:center;gap:3px;cursor:pointer;box-shadow:0 6px 20px #0b1b4d66}
+#snd.on{display:flex}#snd b{width:3px;height:14px;background:var(--ivory);border-radius:2px;animation:eq 1s ease-in-out infinite}#snd b:nth-child(2){animation-delay:-.3s}#snd b:nth-child(3){animation-delay:-.6s}
+#snd.mute b{animation:none;height:4px}
+@keyframes eq{50%{height:5px}}
+#cv{position:fixed;inset:0;pointer-events:none;z-index:60;width:100%;height:100%}
+@media(min-width:760px){.letter,.it{max-width:640px}.row .tile{width:200px;height:270px}.row.rev .tile{width:260px;height:190px}.pop{width:230px;max-width:none}.brk{margin:110px auto 40px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}}
+</style></head>
+<body class="lock noph">
+<div id="bar"></div><div id="cnt">1 of 25</div><button id="snd" aria-label="Toggle music"><b></b><b></b><b></b></button><canvas id="cv"></canvas>
+<audio id="bg" loop preload="auto"></audio>
+<section id="gate"><small>FOR MILCAH</small><h1>A letter, tied up<br>in twenty-five thanks</h1><button id="seal" aria-label="Open your letter">M</button><small>TAP THE SEAL</small></section>
+<header class="hero"><div class="big">25</div><div class="orb tile a"></div><div class="orb tile b"></div>
+<div class="arch"><div class="tile"></div></div>
+<h2><span><em>Happy 25th,</em></span><span><em>Milcah.</em></span></h2><p>A few memories, and a letter from my heart.</p></header>
+<div class="mq"><div class="row" data-n="8"></div><div class="row rev" data-n="8"></div></div>
+<main class="letter"><h2 class="r">25 Things I Thank God For About You</h2><div class="sub r">A BIRTHDAY LETTER TO MY MILK</div><p class="drop r">Today is a day that the Lord has made, and I’m so glad and I rejoice with you today. I’m not just celebrating your birthday; it goes beyond that. I’m celebrating the gift you are to the universe and, especially, to me.</p><p class=" r">Thinking of how to creatively write this, I thought to list out 25 things that I thank God for about you. So, I’ll suggest that you buckle up. This may be a long ride, my baby.</p></main>
+<section class="grp lt"><article class="it odd" data-n="1"><div class="num">01</div><div class="pop tile p1"></div><h3 class="w">Firstly, I thank God for your smile.</h3><div class="tx r"><p>You have one of the most beautiful smiles. When you smile, it changes a lot, if not everything, around you.</p></div></article><article class="it even" data-n="2"><div class="num">02</div><div class="pop tile p2"></div><h3 class="w">I thank God for your beauty.</h3><div class="tx r"><p>Hmmm, you are so fine. Words fail me when I try to quantify or qualify how beautiful you are—physically, in your face and body, and also in your heart. You are so beautiful. Your mom and dad really did well.</p></div></article><article class="it odd" data-n="3"><div class="num">03</div><div class="pop tile p0"></div><h3 class="w">I thank God that I have someone I can share my dreams and aspirations with, and she’s all in with me.</h3><div class="tx r"></div></article><article class="it even" data-n="4"><div class="num">04</div><div class="pop tile p1"></div><h3 class="w">I thank God for the blessing and gift you are to the people around you.</h3><div class="tx r"><p>Whoever doesn’t have Milcah in his or her life—or whoever may have lost a friendship with Milcah—no sabi better thing.</p></div></article><article class="it odd" data-n="5"><div class="num">05</div><div class="pop tile p2"></div><h3 class="w">I thank God for the prayer partner I’ve found in you.</h3><div class="tx r"><p>Thank you for praying for me when I wasn’t even aware. I’m so sure those prayers have been working, and they’ll continue to work. This relationship seems to have come with a lot of packages that I may not have seen coming.</p></div></article><div class="brk"><div class="ph tile arch"></div></div></section><section class="grp dk"><article class="it even" data-n="6"><div class="num">06</div><div class="pop tile p0"></div><h3 class="w">I thank God for the woman you’re becoming.</h3><div class="tx r"><p>My prayer for you has always been that God grants you your heart’s desires, especially concerning your future and how you picture yourself becoming. I believe you’re on your way to becoming your dream woman, in line with God’s will for you as well. This applies to your career, music, spirituality, and every other area of your life. I’m here and willing to support you in every way I can, as God grants me the grace to.</p></div></article><article class="it odd" data-n="7"><div class="num">07</div><div class="pop tile p1"></div><h3 class="w">I thank God for how we started out as genuine friends.</h3><div class="tx r"><p>Meeting you, you seemed like a person I would love to have as a friend, so I went for it, and you willingly accepted me. I’m really grateful to God for the transition and the journey thus far, and I trust Him to make all things beautiful in His time.</p></div></article><article class="it even" data-n="8"><div class="num">08</div><div class="pop tile p2"></div><h3 class="w">I thank God for the beautiful memories we’ve had.</h3><div class="tx r"><p>Moments from back in our school days are beautiful memories that I don’t mind reliving—the hostel meetups, the “after church” dates that we never want to end, the little outings we’ve had together within Minna, the lunch dates, some lie-lie night-class sessions, and so much more.</p></div></article><article class="it odd" data-n="9"><div class="num">09</div><div class="pop tile p0"></div><h3 class="w">I thank God also for the memories we’re yet to have.</h3><div class="tx r"><p>With God in this, I believe there is going to be so much bliss with you here.</p></div></article><article class="it even" data-n="10"><div class="num">10</div><div class="pop tile p1"></div><h3 class="w">I thank God for the worshipper in you.</h3><div class="tx r"><p>Sincerely, this was what attracted me most to you. I grew up in a ministry where one of our visions is to inculcate the attitude of right and true worship to God, especially through music. Looking at how you lead the church and how you sing just points me back to the vision of the ministry. I believe that beyond what is seen outwardly, you worship Him genuinely whenever you have the opportunity to. You express it so much that sometimes, when I look at you, I feel like I’m not being expressive enough to Him too.</p></div></article><div class="brk"><div class="ph tile wide"></div></div></section><section class="vid"><h2 class="r">Our moments, in motion</h2>
+<div class="phone r"><video id="mv" playsinline loop preload="metadata" controls controlslist="nodownload" poster=""></video>
+<div class="vph">Your memory video<br>goes here</div></div></section><section class="grp lt"><article class="it odd" data-n="11"><div class="num">11</div><div class="pop tile p2"></div><h3 class="w">I thank God for the “old woman” that you are.</h3><div class="tx r"><p>I’m sure you understand this one well. Thinking about relationships and ladies in our time and generation, I’m overwhelmed by the terrible mindsets that are sometimes packaged in seemingly nice bodies. But you have shown yourself to be different—from your thinking, to your dressing, to your values, and your perceptions toward a lot of things. It gives me so much chills and comfort that you still live in the ’80s. I feel less pressured as your boyfriend, and I sincerely do not take this for granted. Thank you.</p></div></article><article class="it even" data-n="12"><div class="num">12</div><div class="pop tile p0"></div><h3 class="w">I thank God for your posture.</h3><div class="tx r"><p>I’ve never mentioned anything about this, but you look unique and different when you walk, and I truly find it attractive (yes! You could say it’s because I really like you). I’m sure you feel bad at times about it and wonder, “Why me?”, especially when the pain kicks in. I want you to know that I love you that way, and I’m proud of you.</p></div></article><article class="it odd" data-n="13"><div class="num">13</div><div class="pop tile p1"></div><h3 class="w">I thank God for the mother you’ll become.</h3><div class="tx r"><p>Hearing you speak about parenting and family makes me optimistic about the good mother you’ll be to your own children and how your children will be proud to call you “Mommy.” Come on, we can already see a little of that “good Mommy” tendency from the way you handle Agmada, Adayilo, and Knigayi.</p></div></article><article class="it even" data-n="14"><div class="num">14</div><div class="pop tile p2"></div><h3 class="w">I thank God for your faith in Jesus.</h3><div class="tx r"><p>It’s worth it to thank God that you are in Christ.</p></div></article><article class="it odd" data-n="15"><div class="num">15</div><div class="pop tile p0"></div><h3 class="w">I thank God for the affirmations that keep coming from you.</h3><div class="tx r"><p>Those words truly make me feel loved by you (I know you know). If not from anyone at all, hearing them from you gives me so much chills too.</p></div></article><div class="brk"><div class="ph tile circ"></div></div></section><section class="grp dk"><article class="it even" data-n="16"><div class="num">16</div><div class="pop tile p1"></div><h3 class="w">I thank God for your vulnerability.</h3><div class="tx r"><p>You show a level of vulnerability toward me, trusting me enough to show me some parts of you—good or not so good. I’m here to encourage you and walk with you through whatever it may be, as God grants me the grace to.</p></div></article><article class="it odd" data-n="17"><div class="num">17</div><div class="pop tile p2"></div><h3 class="w">I thank God that you can cook and it tastes not basic.</h3><div class="tx r"><p>You cook well, at least from the little you’ve made for me—that’s enough to vet your cooking. If you could make rice with Sprite and nothing spoil, why would I doubt your cooking abilities?</p></div></article><article class="it even" data-n="18"><div class="num">18</div><div class="pop tile p0"></div><h3 class="w">I thank God for how intentional our romantic relationship has been from the start.</h3><div class="tx r"><p>The meaningful conversations, letting people know about it—not necessarily to show off, but for accountability’s sake, right?—having our weekly prayers, book readings (even though that has been inconsistent recently), and so on. I’m grateful to God for that because I feel it’s rare to see in many relationships today. (I just feel so, but I may be wrong.)</p></div></article><article class="it odd" data-n="19"><div class="num">19</div><div class="pop tile p1"></div><h3 class="w">I thank God for your teachability and willingness to learn.</h3><div class="tx r"><p>Whenever I speak to you about certain issues, you are always willing to listen and put things into action where necessary.</p></div></article><article class="it even" data-n="20"><div class="num">20</div><div class="pop tile p2"></div><h3 class="w">I thank God that I can talk to you about issues, conflicts, offences, disagreements, or whatever.</h3><div class="tx r"><p>You’ve always been calm enough to listen, quick to apologize, and willing to explain the reasons behind certain actions that may have resulted in an issue. Thank you for being understanding. I promise, by God’s grace, to do the same and even more for you.</p></div></article><div class="brk duo"><div class="ph tile"></div><div class="ph tile d"></div></div></section><section class="grp lt"><article class="it odd" data-n="21"><div class="num">21</div><div class="pop tile p0"></div><h3 class="w">I thank God for the many blessings you’ve brought into my life.</h3><div class="tx r"><p>Your impact was felt both before and after the relationship. These blessings may not be so visible to you, but I’ve experienced them—I’m not joking. Having you here means many more blessings to come through you.</p></div></article><article class="it even" data-n="22"><div class="num">22</div><div class="pop tile p1"></div><h3 class="w">I thank God for the privilege of loving you—not just you, but “someone like you.”</h3><div class="tx r"><p>Someone like you no dey market again. It’s just you. I know about the emotions within, but it still takes a lot to love. Thank God!</p></div></article><article class="it odd" data-n="23"><div class="num">23</div><div class="pop tile p2"></div><h3 class="w">I thank God for the privilege of being your boyfriend.</h3><div class="tx r"><p>Considering the previous point (22), I’m not just privileged to love you, but to love you as your boyfriend... Dammmmittt!</p></div></article><article class="it even" data-n="24"><div class="num">24</div><div class="pop tile p0"></div><h3 class="w">I thank God for the opportunity MTN has given me to invest a lot financially in this relationship, and for the ability God has given me to afford it.</h3><div class="tx r"><p>Our relationship could have been on the line if we couldn’t keep up with communicating constantly.</p></div></article><article class="it odd" data-n="25"><div class="num">25</div><div class="pop tile p1"></div><h3 class="w">Lastly, I thank God for MAGODE!</h3><div class="tx r"><p>I don’t know if I’m in the right position to say this; however, I will.</p></div></article></section>
+<section class="finale"><div class="close"><p class="r">25 seems to be a critical age where you tend to feel fulfilled or not based on the current state of your life. There are many things to that statement. But I want to encourage you to rest in God, and I believe you are walking in His plans and will for your life. Just keep on pushing, baby girl. I’ll be here cheering you on and celebrating with you every step of the way.</p><p class="r">I don’t mind being your only fan (that’s what we came here for!), but I know that it can’t be as bad as that. All things are working together for your good.</p><p class="r">I pray that you’ll live a long life in good health, if Jesus tarries. I pray that all that you’ve envisioned for yourself becomes your reality soonest. I pray that daily, you grow to know and draw closer to God. May all things work in your favour. May you be found at the right place, at the right time, doing the right things with the right people.</p><p class="r">I truly wish to have physical moments with you on this day, but it is what it is. Thank God still. I’d have to stop here because:</p></div>
+<p class="quote r">“I can go on and on, and on, and on, and on, and on, but my time is not enough, my vocabulary tends to fail me. But permit me to cry out: I love you so much, My Milk. God bless you!”</p><div class="with">WITH ALL MY LOVE,</div><div class="sig r">Yebo Goshie</div>
+<button class="cake" id="cake" aria-label="Make a wish"><svg viewBox="0 0 120 150"><g class="smoke"><path d="M60 30c-8-14 8-18 0-34" stroke="#DCE3F5" fill="none" stroke-width="2"/></g><path class="fl" d="M60 6c14 14 10 26 0 30-10-4-14-16 0-30z" fill="#FFD98A"/><rect x="56" y="34" width="8" height="38" fill="#F8F6EF"/><rect x="14" y="72" width="92" height="30" rx="4" fill="#3E63D6"/><rect x="6" y="100" width="108" height="36" rx="4" fill="#2347B8"/><path d="M14 72q10 14 20 0t20 0t20 0t20 0" fill="#F8F6EF"/></svg><span>TAP THE FLAME, MAKE A WISH</span></button>
+<div id="wish">May you be found at the right place, at the right time, doing the right things with the right people.</div></section>
+<script>
+/* ===== YOUR FILES: edit these three lines ===== */
+const PHOTOS=Array.from({length:20},(_,i)=>`photos/${i+1}.jpg`);
+const VIDEO='video/memories.mp4';
+const AUDIO='audio/song.mp3';
+/* ============================================== */
+const G=['linear-gradient(160deg,#4A74F0,#14308A)','linear-gradient(200deg,#2347B8,#0B1B4D)','linear-gradient(130deg,#0B1B4D,#3E63D6)','linear-gradient(170deg,#7FA2FF,#14308A)','linear-gradient(210deg,#14308A,#5C85F0)'];
+const R=a=>a[Math.floor(Math.random()*a.length)],B=document.body;let P=[];
+function tile(el){const L=[document.createElement('i'),document.createElement('i')];L.forEach(l=>el.appendChild(l));let c=0,last=-1;const N=P.length||G.length;
+  const set=l=>{let k;do{k=Math.floor(Math.random()*N)}while(k===last&&N>1);last=k;l.style.backgroundImage=P.length?`url(${P[k]})`:G[k]};
+  set(L[0]);L[0].classList.add('on');
+  const tick=()=>{const n=1-c;set(L[n]);L[n].classList.add('on');L[c].classList.remove('on');c=n;setTimeout(tick,3000+Math.random()*3200)};setTimeout(tick,1200+Math.random()*3500)}
+function init(){if(P.length)B.classList.remove('noph');
+  document.querySelectorAll('.row').forEach(r=>{for(let i=0;i<r.dataset.n*2;i++){const t=document.createElement('div');t.className='tile';r.appendChild(t)}});
+  document.querySelectorAll('.tile').forEach(tile)}
+Promise.all(PHOTOS.map(s=>new Promise(r=>{const i=new Image();i.onload=()=>r(s);i.onerror=()=>r(0);i.src=s}))).then(a=>{P=a.filter(Boolean);init()});
+const mv=document.getElementById('mv'),bg=document.getElementById('bg'),snd=document.getElementById('snd');
+mv.src=VIDEO;mv.addEventListener('loadeddata',()=>mv.closest('.phone').classList.add('has'));
+let wantMusic=true;bg.src=AUDIO;bg.volume=0;
+bg.addEventListener('error',()=>snd.classList.remove('on'));
+function fade(to,ms=2500){const s=bg.volume,t0=performance.now();(function f(t){const k=Math.min(1,(t-t0)/ms);bg.volume=s+(to-s)*k;if(k<1)requestAnimationFrame(f);else if(!to)bg.pause()})(t0)}
+function musicOn(){if(!wantMusic)return;bg.play().then(()=>{snd.classList.add('on');snd.classList.remove('mute');fade(.22)}).catch(()=>{})}
+snd.onclick=()=>{if(bg.paused){wantMusic=true;musicOn()}else{wantMusic=false;snd.classList.add('mute');fade(0,600)}};
+mv.addEventListener('play',()=>{if(!bg.paused)fade(0,500)});
+const back=()=>{if(wantMusic)musicOn()};mv.addEventListener('pause',back);mv.addEventListener('ended',back);
+document.querySelectorAll('.w').forEach(h=>{h.innerHTML=h.textContent.split(' ').map((w,i)=>`<span style="transition-delay:${i*70}ms">${w}</span> `).join('')});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.it,.r,.ph,.pop').forEach(e=>io.observe(e));
+new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)mv.pause()}),{threshold:.2}).observe(mv);
+const bar=document.getElementById('bar'),cnt=document.getElementById('cnt'),its=[...document.querySelectorAll('.it')],pops=[...document.querySelectorAll('.pop')];
+addEventListener('scroll',()=>{const h=document.documentElement;bar.style.width=(scrollY/(h.scrollHeight-innerHeight)*100)+'%';
+  let n=0;its.forEach(i=>{if(i.getBoundingClientRect().top<innerHeight*.55)n=+i.dataset.n});
+  const f=document.querySelector('.finale').getBoundingClientRect().top<innerHeight*.5;
+  cnt.textContent=n+' of 25';cnt.classList.toggle('show',n>0&&!f);
+  pops.forEach(p=>{const r=p.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight)p.style.translate='0 '+((r.top+r.height/2-innerHeight/2)*-.12)+'px'})},{passive:true});
+/* confetti */
+const cv=document.getElementById('cv'),x=cv.getContext('2d'),D=devicePixelRatio;let ps=[],run=false;
+function size(){cv.width=innerWidth*D;cv.height=innerHeight*D}size();addEventListener('resize',size);
+function burst(ox,oy,n=130){const C=['#2347B8','#5C85F0','#7FA2FF','#F8F6EF','#DCE3F5','#FFD98A'];
+  for(let i=0;i<n;i++){const a=Math.random()*6.283,s=4+Math.random()*10;ps.push({x:ox*D,y:oy*D,vx:Math.cos(a)*s*D,vy:(Math.sin(a)*s-6)*D,w:(5+Math.random()*7)*D,r:Math.random()*6,vr:Math.random()*.3-.15,c:R(C),l:1})}
+  if(!run){run=true;requestAnimationFrame(step)}}
+function step(){x.clearRect(0,0,cv.width,cv.height);ps=ps.filter(p=>p.l>0&&p.y<cv.height+40);
+  ps.forEach(p=>{p.vy+=.28*D;p.vx*=.99;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;p.l-=.004;x.save();x.translate(p.x,p.y);x.rotate(p.r);x.globalAlpha=Math.min(1,p.l*2);x.fillStyle=p.c;x.fillRect(-p.w/2,-p.w/4,p.w,p.w/2);x.restore()});
+  ps.length?requestAnimationFrame(step):(run=false,x.clearRect(0,0,cv.width,cv.height))}
+document.getElementById('seal').onclick=function(){this.classList.add('crack');burst(innerWidth/2,innerHeight/2,160);musicOn();
+  setTimeout(()=>{document.getElementById('gate').classList.add('open');B.classList.remove('lock');B.classList.add('go');burst(innerWidth/2,innerHeight*.35,120)},700);
+  setTimeout(()=>document.getElementById('gate').style.display='none',2200)};
+document.getElementById('cake').onclick=function(){if(this.classList.contains('out'))return;this.classList.add('out');const b=this.getBoundingClientRect();burst(b.left+b.width/2,b.top,200);setTimeout(()=>burst(innerWidth*.2,innerHeight*.5,80),300);setTimeout(()=>burst(innerWidth*.8,innerHeight*.5,80),500)};
+</script></body></html>
